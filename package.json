@@ -1,0 +1,7 @@
+{
+  "name": "fire-on-the-island",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  }
+}
