@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fire-on-the-island
+    runtime: static
+    buildCommand: echo static
+    staticPublishPath: .

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fire on the Island — David Santana presents</title>
+  <meta name="description" content="David Santana presents Fire on the Island, a three-day music festival the first weekend of December at the Amphitheater in Marathon, Florida." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,620;1,9..144,460&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #07110f;
+      --ink-2: #10211c;
+      --sand: #f4ead8;
+      --sand-dim: #cbbfa8;
+      --copper: #e37a3a;
+      --lagoon: #7dccc4;
+      --lagoon-deep: #1c4f4c;
+      --line: rgba(244, 234, 216, 0.16);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Outfit", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--sand);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, .btn {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      mix-blend-mode: difference;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-weight: 620;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--lagoon); }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .spine {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+      border-right: 1px solid var(--line);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--sand-dim);
+      background: rgba(7, 17, 15, 0.55);
+      position: relative;
+      z-index: 2;
+    }
+    .hero-media {
+      position: relative;
+      min-height: 100vh;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      filter: saturate(0.85) contrast(1.05);
+    }
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7,17,15,0.25) 0%, rgba(7,17,15,0.15) 35%, rgba(7,17,15,0.78) 100%),
+        radial-gradient(80% 60% at 70% 30%, transparent, rgba(7,17,15,0.45));
+    }
+    .hero-copy {
+      position: absolute;
+      z-index: 2;
+      left: 40px;
+      right: 40px;
+      bottom: 48px;
+    }
+    .presents {
+      margin: 0 0 14px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--lagoon);
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(64px, 11vw, 148px);
+      line-height: 0.84;
+      letter-spacing: -0.035em;
+      margin: 0;
+    }
+    h1 em {
+      font-style: italic;
+      font-weight: 460;
+      color: var(--copper);
+    }
+    .hero-meta {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .meta-line {
+      font-size: 15px;
+      max-width: 460px;
+      color: var(--sand);
+    }
+    .meta-line strong {
+      display: block;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: rgba(7, 17, 15, 0.35);
+      backdrop-filter: blur(6px);
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .strip div {
+      padding: 22px 24px;
+      border-right: 1px solid var(--line);
+    }
+    .strip div:last-child { border-right: 0; }
+    .strip span {
+      display: block;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+    .strip small {
+      color: var(--sand-dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    section { padding: 88px 40px; }
+    .section-kicker {
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--lagoon);
+      margin: 0 0 12px;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 18px;
+    }
+    .lede {
+      max-width: 620px;
+      color: var(--sand-dim);
+      font-size: 18px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .frame {
+      position: relative;
+    }
+    .frame img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 4px 80px 4px 4px;
+    }
+    .frame figcaption {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: var(--ink);
+      color: var(--sand);
+      padding: 10px 14px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .card {
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      padding: 24px;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card .num {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--copper);
+      font-size: 22px;
+    }
+    .card h3 {
+      margin: 12px 0 8px;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    .card p { margin: 0; color: var(--sand-dim); }
+
+    .lineup {
+      background:
+        linear-gradient(180deg, rgba(7,17,15,0.2), rgba(7,17,15,0.82)),
+        url("assets/palms.jpg") center/cover;
+    }
+    .lineup-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+    .slot {
+      padding: 22px 8px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      letter-spacing: 0.04em;
+    }
+    .slot b { font-weight: 500; }
+    .slot span { color: var(--sand-dim); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+
+    .tickets {
+      display: grid;
+      grid-template-columns: 280px 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .still {
+      object-fit: cover;
+      height: 100%;
+      min-height: 280px;
+      border-radius: 4px;
+    }
+    .pass {
+      border: 1px solid var(--line);
+      padding: 28px;
+      background: linear-gradient(160deg, #14302b, #0c1816 60%);
+      position: relative;
+      overflow: hidden;
+    }
+    .pass::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(var(--copper), var(--lagoon));
+    }
+    .pass h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 32px;
+      margin: 8px 0 6px;
+    }
+    .price {
+      font-family: var(--serif);
+      font-size: 42px;
+      margin: 18px 0 8px;
+      letter-spacing: -0.03em;
+    }
+    .soon {
+      color: var(--copper);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .pass p { color: var(--sand-dim); margin-bottom: 0; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      border-top: 1px solid var(--line);
+    }
+    .contact-box {
+      border: 1px dashed rgba(125, 204, 196, 0.45);
+      padding: 28px;
+      border-radius: 4px;
+    }
+    .contact-box dt {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--lagoon);
+      margin-top: 16px;
+    }
+    .contact-box dt:first-child { margin-top: 0; }
+    .contact-box dd {
+      margin: 4px 0 0;
+      font-family: var(--serif);
+      font-size: 26px;
+    }
+
+    footer {
+      padding: 28px 40px 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--sand-dim);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .spine { display: none; }
+      .hero-copy { left: 20px; right: 20px; bottom: 28px; }
+      .strip, .split, .cards, .lineup-grid, .tickets, .contact {
+        grid-template-columns: 1fr;
+      }
+      .strip div { border-right: 0; border-bottom: 1px solid var(--line); }
+      section { padding: 64px 20px; }
+      .frame img { height: 320px; border-radius: 4px; }
+      footer { flex-direction: column; padding: 24px 20px 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">Fire on the Island</a>
+    <nav class="nav-links">
+      <a href="#weekend">The weekend</a>
+      <a href="#lineup">Lineup</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" style="padding:0">
+      <div class="spine">
+        <span>Marathon, Florida</span>
+        <span>Three days</span>
+        <span>Keys</span>
+      </div>
+      <div class="hero-media">
+        <img src="assets/shore.jpg" alt="Palms along dark water with a warm stage glow at dusk" />
+        <div class="hero-copy">
+          <p class="presents">David Santana presents</p>
+          <h1>Fire on<br />the <em>Island</em></h1>
+          <div class="hero-meta">
+            <p class="meta-line">
+              <strong>Music festival</strong>
+              The Amphitheater · Marathon, Florida<br />
+              First weekend of December · three days
+            </p>
+            <span class="pill">Over 30 bands · vendors · entertainers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div><span>3</span><small>Days on the water</small></div>
+      <div><span>30+</span><small>Bands</small></div>
+      <div><span>Keys</span><small>Marathon amphitheater</small></div>
+      <div><span>Dec</span><small>First weekend</small></div>
+    </div>
+
+    <section id="weekend">
+      <div class="split">
+        <figure class="frame">
+          <img src="assets/palms.jpg" alt="Palm fronds and warm night lights" />
+          <figcaption>Alternative island nights</figcaption>
+        </figure>
+        <div>
+          <p class="section-kicker">The weekend</p>
+          <h2>Heat, tide, and a full stage.</h2>
+          <p class="lede">
+            Fire on the Island is a three-day music festival at the Amphitheater in Marathon, Florida, the first weekend of December. More than thirty bands share the grounds with vendors and entertainers — a Keys night built for people who like their tropics a little louder.
+          </p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div>
+            <div class="num">01</div>
+            <h3>Bands</h3>
+            <p>Over thirty acts across the weekend. The bill is still being set.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div>
+            <div class="num">02</div>
+            <h3>Vendors</h3>
+            <p>Food, goods, and island makers on the grounds. Booth list coming with tickets.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div>
+            <div class="num">03</div>
+            <h3>Entertainers</h3>
+            <p>More than the main stage — performers through the grounds between sets.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="lineup" id="lineup">
+      <p class="section-kicker">Lineup</p>
+      <h2>Names land here.</h2>
+      <p class="lede">The stage is booked for more than thirty bands. Individual names go up as David confirms them.</p>
+      <div class="lineup-grid">
+        <div class="slot"><b>Day one</b><span>To be announced</span></div>
+        <div class="slot"><b>Day two</b><span>To be announced</span></div>
+        <div class="slot"><b>Day three</b><span>To be announced</span></div>
+        <div class="slot"><b>Vendors</b><span>Coming soon</span></div>
+        <div class="slot"><b>Entertainers</b><span>Coming soon</span></div>
+        <div class="slot"><b>Set times</b><span>Coming soon</span></div>
+      </div>
+    </section>
+
+    <section id="tickets">
+      <p class="section-kicker">Tickets</p>
+      <h2>Pricing, when it’s ready.</h2>
+      <p class="lede">Passes are not on sale yet. These cards are ready for the numbers — single day, weekend, and whatever else you want to offer.</p>
+      <div class="tickets" style="margin-top:32px">
+        <img class="still" src="assets/still.jpg" alt="Hibiscus, rope, and shell on dark sand" />
+        <article class="pass">
+          <p class="soon">Single day</p>
+          <h3>Day pass</h3>
+          <p class="price">—</p>
+          <p>One day at the Amphitheater. Price to be added.</p>
+        </article>
+        <article class="pass">
+          <p class="soon">All three days</p>
+          <h3>Weekend</h3>
+          <p class="price">—</p>
+          <p>The full first weekend of December. Price to be added.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Talk to the show.</h2>
+        <p class="lede">Press, vendors, and bands can reach the festival here once the details are in. Nothing is published yet — send them over and this block updates in one pass.</p>
+      </div>
+      <dl class="contact-box">
+        <dt>Presented by</dt>
+        <dd>David Santana</dd>
+        <dt>Email</dt>
+        <dd>Coming soon</dd>
+        <dt>Phone</dt>
+        <dd>Coming soon</dd>
+        <dt>Where</dt>
+        <dd>Amphitheater, Marathon, FL</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <span>David Santana presents Fire on the Island</span>
+    <span>Marathon, Florida</span>
+  </footer>
+</body>
+</html>
