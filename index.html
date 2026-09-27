@@ -39,26 +39,21 @@
       cursor: pointer;
     }
 
-    .nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 20;
+    .hero-top {
+      position: absolute;
+      z-index: 2;
+      top: 28px;
+      left: 40px;
+      right: 40px;
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 18px 28px;
-      mix-blend-mode: difference;
-    }
-    .brand {
-      font-family: var(--serif);
-      font-weight: 620;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
     }
     .nav-links {
       display: flex;
       gap: 22px;
+      padding-top: 8px;
       font-size: 13px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -105,7 +100,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(7,17,15,0.25) 0%, rgba(7,17,15,0.15) 35%, rgba(7,17,15,0.78) 100%),
+        linear-gradient(180deg, rgba(7,17,15,0.72) 0%, rgba(7,17,15,0.12) 32%, rgba(7,17,15,0.78) 100%),
         radial-gradient(80% 60% at 70% 30%, transparent, rgba(7,17,15,0.45));
     }
     .hero-copy {
@@ -125,7 +120,7 @@
     h1 {
       font-family: var(--serif);
       font-weight: 500;
-      font-size: clamp(64px, 11vw, 148px);
+      font-size: clamp(52px, 7vw, 96px);
       line-height: 0.84;
       letter-spacing: -0.035em;
       margin: 0;
@@ -402,6 +397,7 @@
       .nav-links { display: none; }
       .hero { grid-template-columns: 1fr; }
       .spine { display: none; }
+      .hero-top { left: 20px; right: 20px; top: 20px; }
       .hero-copy { left: 20px; right: 20px; bottom: 28px; }
       .strip, .split, .cards, .lineup-grid, .tickets, .contact {
         grid-template-columns: 1fr;
@@ -416,15 +412,6 @@
   </style>
 </head>
 <body>
-  <header class="nav">
-    <nav class="nav-links">
-      <a href="#weekend">The weekend</a>
-      <a href="#lineup">Lineup</a>
-      <a href="#tickets">Tickets</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
   <main id="top">
     <section class="hero" style="padding:0">
       <div class="spine">
@@ -434,9 +421,19 @@
       </div>
       <div class="hero-media">
         <img src="assets/hero.jpg" alt="Fire on the Island" />
+        <div class="hero-top">
+          <div>
+            <p class="presents">David Santana Presents</p>
+            <h1>Fire on<br />the <em>Island</em></h1>
+          </div>
+          <nav class="nav-links">
+            <a href="#weekend">The weekend</a>
+            <a href="#lineup">Lineup</a>
+            <a href="#tickets">Tickets</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
         <div class="hero-copy">
-          <p class="presents">David Santana presents</p>
-          <h1>Fire on<br />the <em>Island</em></h1>
           <div class="hero-meta">
             <p class="meta-line">
               <strong>Music festival</strong>
