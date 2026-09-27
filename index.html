@@ -267,6 +267,30 @@
     }
     .card p { margin: 0; color: var(--sand-dim); }
 
+    .cast {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr;
+      gap: 14px;
+    }
+    .cast figure { margin: 0; position: relative; }
+    .cast img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .cast figcaption {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      background: rgba(7, 17, 15, 0.82);
+      padding: 10px 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
     .lineup {
       background:
         linear-gradient(180deg, rgba(7,17,15,0.2), rgba(7,17,15,0.82)),
@@ -385,6 +409,8 @@
       .strip div { border-right: 0; border-bottom: 1px solid var(--line); }
       section { padding: 64px 20px; }
       .frame img { height: 320px; border-radius: 4px; }
+      .cast { grid-template-columns: 1fr; }
+      .cast img { height: 320px; }
       footer { flex-direction: column; padding: 24px 20px 36px; }
     }
   </style>
@@ -418,7 +444,7 @@
               The Amphitheater · Marathon, Florida<br />
               First weekend of December · three days
             </p>
-            <span class="pill">Over 30 bands · vendors · entertainers</span>
+            <span class="pill">Pirates · fire blowers · the ladies of the island</span>
           </div>
         </div>
       </div>
@@ -464,9 +490,29 @@
           <div>
             <div class="num">03</div>
             <h3>Entertainers</h3>
-            <p>More than the main stage — performers through the grounds between sets.</p>
+            <p>Pirates on the grounds, fire blowers between sets, and the ladies of the island all weekend.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="grounds">
+      <p class="section-kicker">On the grounds</p>
+      <h2>Pirates, fire, and the ladies.</h2>
+      <p class="lede">David’s weekend is not only the bands. Pirates work the grounds, fire blowers take the open air between sets, and the ladies of the island are part of the show.</p>
+      <div class="cast">
+        <figure>
+          <img src="assets/pirates.jpg" alt="Pirates on a torchlit outdoor stage" />
+          <figcaption>Pirates</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/fire.jpg" alt="A fire blower performing at night" />
+          <figcaption>Fire blowers</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ladies.jpg" alt="Women performers under festival lights" />
+          <figcaption>The ladies</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -479,7 +525,7 @@
         <div class="slot"><b>Day two</b><span>To be announced</span></div>
         <div class="slot"><b>Day three</b><span>To be announced</span></div>
         <div class="slot"><b>Vendors</b><span>Coming soon</span></div>
-        <div class="slot"><b>Entertainers</b><span>Coming soon</span></div>
+        <div class="slot"><b>Entertainers</b><span>Pirates · fire · ladies</span></div>
         <div class="slot"><b>Set times</b><span>Coming soon</span></div>
       </div>
     </section>
